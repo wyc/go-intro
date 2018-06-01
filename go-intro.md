@@ -107,7 +107,8 @@ type Person struct {
 }
 
 func (p Person) Introduce() string {
-    return p.Name + " is " + p.Age  // e.g., "Fred is 51"
+    // e.g., "Fred is 51"
+    return p.Name + " is " + strconv.Itoa(p.Age)
 }
 
 func (p *Person) IncrementAge() {
@@ -249,10 +250,10 @@ for idx, v := range a {
     fmt.Println(idx, v)
 }
 /* Output:
-0: alpha
-1: beta
-2: charlie
-3: delta
+0 alpha
+1 beta
+2 charlie
+3 delta
 */
 ```
 
@@ -265,10 +266,10 @@ for k, v := range m {
     fmt.Println(k, v)
 }
 /* Output (order NOT guaranteed):
-a: alpha
-b: beta
-c: charlie
-d: delta
+a alpha
+b beta
+c charlie
+d delta
 */
 ```
 
